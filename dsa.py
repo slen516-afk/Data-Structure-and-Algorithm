@@ -61,3 +61,48 @@ class LinkedList:
         new_node = Node(data)
         new_node.next_node = self.head
         self.head = new_node
+    def search(self, key):
+        """
+        Search for the first node containing data that matches the key
+        Returns the node or None if not found
+        """
+
+        current = self.head
+
+        while current:
+            if current.data == key:
+                return current
+            else:
+                current = current.next_node
+        return None
+    
+    def __repr__(self):
+        """Return a string representation of the list
+           Takes O(n) time
+        """
+        nodes = []
+        current = self.head
+
+        while current:
+            if current is self.head:
+                nodes.append("[Head: %s]" % current.data)
+            elif current.next_node is None:
+                nodes.append("[Tail: %s]" % current.data)
+            else:
+                nodes.append("[%s]" % current.data)
+            
+            current = current.next_node
+        
+        # 确保 return 在 def 内部
+        return '->'.join(nodes)
+
+
+
+
+
+
+
+
+
+
+        
