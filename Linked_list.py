@@ -31,6 +31,18 @@ class LinkedList:
             count += 1
             current = current.next_node
         return count
+    
+    def node_at_index(self, index):
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            position = 0
+        
+            while position < index:
+                current = current.next_node
+                position += 1
+            return current
 
     def add(self, data):
         """
@@ -83,7 +95,7 @@ class LinkedList:
         Return the node or None if key doesn't exist
         Takes O(n) time
         """
-        
+
         current = self.head
         previous = None
         found = False
