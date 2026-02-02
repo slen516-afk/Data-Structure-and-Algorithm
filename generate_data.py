@@ -2,7 +2,7 @@
 import random
 
 # 設定要產生的數字數量
-count = 10000
+count = 1000000
 
 # 產生 10000 個隨機數字並寫入檔案
 with open("10000.txt", "w") as f:
